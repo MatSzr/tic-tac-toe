@@ -5,15 +5,15 @@ def display_board(board):
     
     print("+-------+-------+-------+")
     print("|       |       |       |")
-    print("|  ", board[0, 0], "  |  " , board[0, 1], "  |  " , board[0, 2] , "  |" )
+    print("|  ", board[0][0], "  |  " , board[0][1], "  |  " , board[0][2], "  |" )
     print("|       |       |       |")
     print("+-------+-------+-------+")
     print("|       |       |       |")
-    print("|  ", board[1, 0], "  |  " , board[1, 1], "  |  " , board[1, 2] , "  |" )
+    print("|  ", board[1][0], "  |  " , board[1][1], "  |  " , board[1][2], "  |" )
     print("|       |       |       |")
     print("+-------+-------+-------+")
     print("|       |       |       |")
-    print("|  ", board[2, 0], "  |  " , board[2, 1], "  |  " , board[2, 2] , "  |" )
+    print("|  ", board[2][0], "  |  " , board[2][1], "  |  " , board[2][2], "  |" )
     print("|       |       |       |")
     print("+-------+-------+-------+")
     
@@ -26,18 +26,33 @@ def enter_move(board):
     while True:
         
         print("Please, provide your move")
-        i = int(input())
+        g = int(input())
 
-        if i > 0 and i < 10:
-            if board[i - 1] != "X" and board[i - 1] !=  "O":
-                board[i - 1] = "O"
+        i = 0
+        j = 0
+        
+        for i in board:
+                if g == board[i][j]:
+                    return i, j
+                else:
+                    if j < 2:
+                        i += 1
+                        j = 0
+                    else:
+                        j += 1 
+
+        if i > 0 and i < 3 and j > 0 and j < 3:
+
+            if board[i] != "X" and board[i] !=  "O":
+                board[i] = "O"
                 break
-            elif board[i - 1] ==  "O":
+            elif board[i] ==  "O":
                 print("That position has been already taken by you. Choose another one instead")
                 continue
             else:
                 print("That position has been already taken by your oponent. Choose another one instead")
                 continue
+
         else:
             print("Provided number is a wrong number. Provide number that is greater or equal to 1 or smaller or equal to 9")
             continue
