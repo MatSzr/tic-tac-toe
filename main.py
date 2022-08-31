@@ -1,4 +1,8 @@
 def display_board(board):
+    
+    # The function accepts one parameter containing the board's current status
+    # and prints it out to the console.    
+    
     print("+-------+-------+-------+")
     print("|       |       |       |")
     print("|  ", board[0], "  |  " , board[1], "  |  " , board[2] , "  |" )
@@ -13,12 +17,12 @@ def display_board(board):
     print("|       |       |       |")
     print("+-------+-------+-------+")
     
-    # The function accepts one parameter containing the board's current status
-    # and prints it out to the console.
-
 
 def enter_move(board):
-    
+
+    # The function accepts the board's current status, asks the user about their move, 
+    # checks the input, and updates the board according to the user's decision.
+
     while True:
         
         print("Please, provide your move")
@@ -37,10 +41,6 @@ def enter_move(board):
         else:
             print("Provided number is a wrong number. Provide number that is greater or equal to 1 or smaller or equal to 9")
             continue
-
-
-    # The function accepts the board's current status, asks the user about their move, 
-    # checks the input, and updates the board according to the user's decision.
 
 
 #def make_list_of_free_fields(board):
