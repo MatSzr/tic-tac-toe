@@ -57,7 +57,7 @@ def enter_move(board):
     # The function draws the computer's move and updates the board.
 
 
-board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+board = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 display_board(board)
 enter_move(board)
