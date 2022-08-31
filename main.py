@@ -17,7 +17,28 @@ def display_board(board):
     # and prints it out to the console.
 
 
-#def enter_move(board):
+def enter_move(board):
+    
+    while True:
+        
+        print("Please, provide your move")
+        i = int(input())
+
+        if i > 0 and i < 10:
+            if board[i - 1] != "X" and board[i - 1] !=  "O":
+                board[i - 1] = "O"
+                break
+            elif board[i - 1] ==  "O":
+                print("That position has been already taken by you. Choose another one instead")
+                continue
+            else:
+                print("That position has been already taken by your oponent. Choose another one instead")
+                continue
+        else:
+            print("Provided number is a wrong number. Provide number that is greater or equal to 1 or smaller or equal to 9")
+            continue
+
+
     # The function accepts the board's current status, asks the user about their move, 
     # checks the input, and updates the board according to the user's decision.
 
@@ -37,4 +58,9 @@ def display_board(board):
 
 
 board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+display_board(board)
+enter_move(board)
+display_board(board)
+enter_move(board)
 display_board(board)
