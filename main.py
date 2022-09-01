@@ -96,14 +96,21 @@ def make_list_of_free_fields(board):
     # The function browses the board and builds a list of all the free squares; 
     # the list consists of tuples, while each tuple is a pair of row and column numbers.
 
-    free_fields = []
+    free_squares = [['','',''], ['','',''], ['','','']]
 
-    for i in board:
-        if board[i] = "X" or "O":
-            continue
-        else 
+    i = 0
 
-    return free_fields
+    while i < 3:
+        if type(board[i][0]) == int:
+            free_squares[i][0] = (i, 0)
+        if type(board[i][1]) == int:
+            free_squares[i][1] = (i, 1)
+        if type(board[i][2]) == int:
+            free_squares[i][2] = (i, 2)
+        
+        i += 1
+        
+    return free_squares
 
 
 #def victory_for(board, sign):
@@ -123,3 +130,5 @@ print(board)
 display_board(board)
 board = enter_move(board)
 display_board(board)
+free_squares = make_list_of_free_fields(board)
+print(free_squares)
