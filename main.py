@@ -142,14 +142,37 @@ def victory_for(board, sign):
         won = False
         return won
 
-#def draw_move(board):
+def draw_move(board):
     # The function draws the computer's move and updates the board.
 
+    x = True
+
+    count_i = 0
+    count_j = 0
+
+    while x:
+        
+        from random import randrange
+ 
+        for i in range(1):
+            count_i = randrange(3)
+            count_j = randrange(3)
+
+        # Check if position is free or already taken and take it over if that is possible
+
+        if board[count_i][count_j] != "X" and board[count_i][count_j] !=  "O":
+            board[count_i][count_j] = "X"
+            x = False
+    
+    return board
 
 board = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
+draw_move(board)
 display_board(board)
 board = enter_move(board)
+print(board)
+draw_move(board)
 print(board)
 display_board(board)
 board = enter_move(board)
